@@ -1,0 +1,14 @@
+<div class="page-home" xmlns="http://www.w3.org/1999/html">
+<div>
+  <ul class="list-group">
+    <li class="list-group-item"  *ngFor="let product of coffee">
+      <button (click)="addToCard(product)" type="button" class="btn btn-sm btn-primary float-right">
+        Sepete ekle
+        <i class="far fa-shopping-cart"></i>
+      </button>
+      <h4><b>{{product.productName}}</b></h4>
+      <p>{{product.productPrice}} TL</p>
+    </li>
+  </ul>
+</div>
+</div>

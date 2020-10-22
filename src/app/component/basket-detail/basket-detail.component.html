@@ -1,0 +1,29 @@
+<h4 class="page-header" >Sepetim</h4>
+<table class="table table-responsive" *ngIf="cartItem.length>0;else cartEmptyContent">
+  <thead>
+  <tr>
+    </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let cartItem of cartItem">
+    <td>{{cartItem.product.productName}}</td>
+    <td>{{cartItem.product.productPrice}} TL </td>
+    <td>{{cartItem.quantity}}</td>
+    <td>{{cartItem.product.productPrice*cartItem.quantity }} TL</td>
+    <td>
+      <button class="btn btn-xs btn-danger" (click)="removeFromCart(cartItem.product)">
+        SİL
+      </button>
+    </td>
+  </tr>
+  <button class="btn btn-xs btn-danger" (click)="confirm()">
+    Onayla
+  </button>
+  </tbody>
+</table>
+<ng-template #cartEmptyContent>
+  <div class="alert alert-info">
+    Sepetinde ürün bulunmamaktadır.
+  </div>
+</ng-template>
+
